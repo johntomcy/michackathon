@@ -18,9 +18,9 @@
         <module>michackathon-auth</module>
         <!--<module>michackathon-gateway</module>
         <module>michackathon-ui</module>
-        <module>michackathon-api</module>
+        <module>michackathon-api</module>-->
         <module>michackathon-config</module>
-        <module>michackathon-admin</module>-->
+        <!--<module>michackathon-admin</module>-->
     </modules>
 
     <properties>
@@ -36,7 +36,7 @@
         <platform-bom.version>Athens-RELEASE</platform-bom.version>
         <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
         <spring-boot-admin.version>1.4.2</spring-boot-admin.version>
-        <docker.image.prefix>michackathon</docker.image.prefix>
+        <docker.image.prefix>dockerhackathon</docker.image.prefix>
         <docker.plugin.version>0.4.13</docker.plugin.version>
         <maven-resources-plugin.version>3.0.1</maven-resources-plugin.version>
         <asciidoctor-maven-plugin.version>1.5.3</asciidoctor-maven-plugin.version>

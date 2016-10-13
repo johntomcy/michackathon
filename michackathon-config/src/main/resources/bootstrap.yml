@@ -1,0 +1,33 @@
+# PROFILES
+spring:
+    application.name: config-service
+    profiles.active: @default.spring.profiles@
+    aop:
+        proxyTargetClass: true
+# CONFIGURATION REPO
+    cloud:
+        config:
+            server:
+                git:
+                    uri: ${CONFIGURATION_REPOSITORY:https://github.com/shardis/spring-angular2-starter-configuration.git}
+                default-label: ${CONFIGURATION_BRANCH:master}
+
+# SERVICE VERSION
+info:
+    version: @project.version@
+
+# EMBEDDED SERVER CONFIGURATION
+server:
+    port: ${port:8888}
+
+---
+
+spring:
+  profiles: docker
+
+
+---
+
+spring:
+  profiles: standalone
+

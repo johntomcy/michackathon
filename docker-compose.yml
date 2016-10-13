@@ -1,0 +1,30 @@
+version: '2'
+services:
+  config-service:
+    image: dockerhackathon/michackathon-config
+    ports:
+     - 8888:8888
+    environment:
+     - CONFIGURATION_REPOSITORY=https://github.com/shardis/spring-angular2-starter-configuration.git
+     - CONFIGURATION_BRANCH=master
+  discovery-service:
+    image: dockerhackathon/michackathon-discovery
+    ports:
+     - 8081:8081
+    depends_on:
+     - config-service
+    links:
+     - config-service
+    entrypoint: ./wait-for-service.sh http://config-service:8888/health
+  
+  auth-service:
+    image: dockerhackathon/michackathon-auth
+    ports:
+     - 8083:8083
+    depends_on:
+     - discovery-service
+    links:
+     - discovery-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+  
