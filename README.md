@@ -22,13 +22,13 @@ Wait for all the dockers to start successfully (depensing on your system it coul
 
 To see if the dockers have registered successfully in discovery service (Eureka) please use the below URL:
 
-### [Eureka: http://localhost:8081] (http://localhost:8081)
+### [Eureka: http://localhost:8081](http://localhost:8081)
 
 You should see all the services listed here... (hopefully)
 
 Since all the services are Spring boot, there is another URL which can be used which lists all the Spring boot applications. You can view these in below URL:
 
-### [Spring Boot Application Dashboard: http://localhost:8084] (http://localhost:8084)
+### [Spring Boot Application Dashboard: http://localhost:8084](http://localhost:8084)
 
 There is a UI using Angular 2, which can be accesses using below URL (again its a docker based Spring Boot application):
 
