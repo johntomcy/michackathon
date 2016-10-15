@@ -7,18 +7,19 @@ export const APP_MENU: AppMenuItem[] = [
     link: ['']
   },
   {
-    name: 'Playground',
-    description: 'Playground page',
+    name: 'Flight Search',
+    description: 'Flight Search page',
     icon: 'casino',
-    link: ['playground']
-  },
-  {
-    name: 'Crud',
-    description: 'Simple crud',
-    icon: 'edit',
-    link: ['crud'],
+    link: ['flightsearch'],
     roles: ['ROLE_ADMIN']
   },
+  // {
+  //   name: 'Crud',
+  //   description: 'Simple crud',
+  //   icon: 'edit',
+  //   link: ['crud'],
+  //   roles: ['ROLE_ADMIN']
+  // },
   {
     name: 'About',
     description: 'About page',

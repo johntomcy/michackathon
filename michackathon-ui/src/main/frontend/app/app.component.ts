@@ -9,7 +9,7 @@ import {APP_MENU, AppMenuItem} from './app.menu';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  public name: String = 'Spring Boot Angular 2 Webpack Starter';
+  public name: String = 'Microservices Hackathon';
   public url: String = 'https://github.com/michackathon';
   public loading: boolean = false;
 

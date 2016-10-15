@@ -1,0 +1,32 @@
+### idea
+.idea/
+*.iml
+
+### sts
+.settings
+.classpath
+.project
+
+### maven
+michackathon-common/target/
+michackathon-discovery/target/
+michackathon-auth/target/
+michackathon-api/target/
+michackathon-ui/target/
+michackathon-admin/target/
+michackathon-gateway/target/
+michackathon-config/target/
+/target/
+
+### node
+npm-debug.log
+npm-debug.log*
+michackathon-ui/etc/
+michackathon-ui/node/
+michackathon-ui/node_modules/
+
+### coverage
+michackathon-ui/coverage/
+
+### dist
+michackathon-ui/src/main/resources/static/

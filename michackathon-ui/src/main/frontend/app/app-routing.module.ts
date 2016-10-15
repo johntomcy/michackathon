@@ -35,6 +35,12 @@ export const routes: Routes = [
     loadChildren: 'app/playground/playground.module#PlaygroundModule'
   },
   {
+    path: 'flightsearch',
+    pathMatch: 'prefix',
+    loadChildren: 'app/flight-search/flight-search.module#FlightSearchModule',
+    canActivate: [AuthenticatedGuard, AdminGuard]
+  },
+  {
     path: 'login',
     pathMatch: 'prefix',
     loadChildren: 'app/login/login.module#LoginModule',
