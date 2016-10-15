@@ -16,11 +16,11 @@
         <module>michackathon-common</module>
         <module>michackathon-discovery</module>
         <module>michackathon-auth</module>
-        <!--<module>michackathon-gateway</module>
+        <module>michackathon-gateway</module>
         <module>michackathon-ui</module>
-        <module>michackathon-api</module>-->
+        <module>michackathon-api</module>
         <module>michackathon-config</module>
-        <!--<module>michackathon-admin</module>-->
+        <module>michackathon-admin</module>
     </modules>
 
     <properties>

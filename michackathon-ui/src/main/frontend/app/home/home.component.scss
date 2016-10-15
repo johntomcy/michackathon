@@ -1,0 +1,13 @@
+md-card-content {
+  display: flex;
+  flex-direction: column;
+  img {
+    width: 368px;
+    height: 400px;
+    align-self: center;
+  }
+}
+
+md-card-header {
+  margin-bottom: 50px;
+}

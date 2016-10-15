@@ -1,0 +1,9 @@
+eureka:
+    client:
+        enabled: false
+spring:
+    cloud:
+        config:
+            enabled: false
+    jackson.serialization:
+        write_dates_as_timestamps: false

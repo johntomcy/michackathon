@@ -16,7 +16,18 @@ services:
     links:
      - config-service
     entrypoint: ./wait-for-service.sh http://config-service:8888/health
-  
+  api-service:
+    image: dockerhackathon/michackathon-api
+    ports:
+     - 8082:8082
+    depends_on:
+     - discovery-service
+     - auth-service
+    links:
+     - discovery-service
+     - auth-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
   auth-service:
     image: dockerhackathon/michackathon-auth
     ports:
@@ -27,4 +38,46 @@ services:
      - discovery-service
      - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+  ui-service:
+    image: dockerhackathon/michackathon-ui
+    ports:
+     - 8080:8080
+    depends_on:
+     - discovery-service
+     - auth-service
+     - api-service
+     - gateway-service
+    links:
+     - discovery-service
+     - gateway-service
+     - auth-service
+     - api-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+  gateway-service:
+    image: dockerhackathon/michackathon-gateway
+    ports:
+      - 8090:8090
+    depends_on:
+      - discovery-service
+    links:
+      - discovery-service
+      - auth-service
+      - api-service
+      - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+  admin-service:
+    image: dockerhackathon/michackathon-admin
+    ports:
+      - 8084:8084
+    depends_on:
+      - discovery-service
+    links:
+      - discovery-service
+      - auth-service
+      - api-service
+      - ui-service
+      - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+  
   

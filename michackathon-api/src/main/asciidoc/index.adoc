@@ -1,0 +1,51 @@
+include::intro.adoc[]
+
+[[resources]]
+= Resources
+
+[[resources-Posts]]
+== Posts
+The Post resource is used to create, modify and posts.
+
+
+=======
+
+[[resource-post-list]]
+=== Listing posts
+A `GET` request lists all of the service's posts.
+
+include::{snippets}/list-posts/response-fields.adoc[]
+
+==== Example request
+
+include::{snippets}/list-posts/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/list-posts/http-response.adoc[]
+
+[[resource-post-create]]
+=== Creating posts
+A `POST` request creates a new post.
+
+include::{snippets}/list-posts/response-fields.adoc[]
+
+==== Example request
+
+include::{snippets}/add-post/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/add-post/http-response.adoc[]
+
+[[resource-post-delete]]
+=== Deleting posts
+A `DELETE` request deletes an existing post based on ID passed.
+
+==== Example request
+
+include::{snippets}/delete-post/curl-request.adoc[]
+
+==== Example response
+
+include::{snippets}/delete-post/http-response.adoc[]

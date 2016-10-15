@@ -1,0 +1,14 @@
+<md-card>
+  <md-card-title>Login Page</md-card-title>
+  <md-card-content>
+    <form #loginForm="ngForm">
+      <h1 style="color: red">{{message}}</h1>
+      <md-input placeholder="Login" [(ngModel)]="username" name="username"></md-input>
+      <md-input type="password" placeholder="Password" [(ngModel)]="password" name="password"></md-input>
+    </form>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button color="accent" (click)="logMeIn()">Log me in</button>
+    <button md-raised-button color="primary">Forgot my password</button>
+  </md-card-actions>
+</md-card>

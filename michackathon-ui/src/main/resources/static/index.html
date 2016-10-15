@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <title>Spring Angular 2 starter</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Spring Angular 2 starter">
+  <base href="/"/>
+  <link rel="apple-touch-icon" sizes="57x57" href="/assets/icon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="/assets/icon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/assets/icon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/assets/icon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/assets/icon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/assets/icon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="/assets/icon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/assets/icon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/icon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/assets/icon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+  <link rel="manifest" href="/assets/manifest.json">
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="/assets/icon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#00bcd4">
+  <style>
+    .loader-overlay {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      background: #000;
+      opacity: 0.8;
+      filter: alpha(opacity=80);
+    }
+
+    .loader-box {
+      width: 512px;
+      height: 512px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -256px 0 0 -256px;
+    }
+
+    .loader-animation {
+      width: 512px;
+      height: 512px;
+      line-height: 512px;
+      position: relative;
+      box-sizing: border-box;
+      text-align: center;
+      z-index: 0;
+    }
+
+    .loader-animation span {
+      text-transform: uppercase;
+      color: #fff;
+      -webkit-animation: blinking 2s infinite;
+    }
+
+    .loader-animation:before, .loader-animation:after {
+      opacity: 0;
+      box-sizing: border-box;
+      content: "\0020";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 512px;
+      border: 5px solid #fff;
+      box-shadow: 0 0 50px #fff, inset 0 0 100px #fff;
+    }
+
+    .loader-animation:after {
+      z-index: 1;
+      -webkit-animation: circleloader 2s infinite 1s;
+    }
+
+    .loader-animation:before {
+      z-index: 2;
+      -webkit-animation: circleloader 2s infinite;
+    }
+
+    @-webkit-keyframes circleloader {
+      0% {
+        -webkit-transform: scale(0);
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        -webkit-transform: scale(1);
+        opacity: 0;
+      }
+    }
+
+    @-webkit-keyframes blinking {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <base href="/">
+<body>
+<michackathon-app>
+  <div class="loader-overlay">
+    <div class="loader-box">
+      <div class="loader-animation">
+        <span>Loading...</span>
+      </div>
+    </div>
+  </div>
+</michackathon-app>
+<script type="text/javascript" src="inline.js"></script><script type="text/javascript" src="styles.224c09207af76e680477.bundle.js"></script><script type="text/javascript" src="main.97d58823702bb6d94686.bundle.js"></script></body>
+</html>

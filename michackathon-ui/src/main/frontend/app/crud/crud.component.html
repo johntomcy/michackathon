@@ -1,0 +1,41 @@
+<md-toolbar align="end">
+  <button md-raised-button color="primary" (click)="newPost()">new post</button>
+  <button md-raised-button color="secondary" (click)="refresh()">refresh</button>
+</md-toolbar>
+<md-card *ngIf="editing">
+  <md-card-title>Editing post</md-card-title>
+  <md-card-content>
+    <form #editPostForm="ngForm">
+      <md-input placeholder="Title" [(ngModel)]="editedPost.title" name="title" maxLength="100" required="required"
+                #titleField>
+        <md-hint align="end">{{titleField.characterCount}} / 100</md-hint>
+      </md-input>
+      <md-input rows="3" type="Content" placeholder="Content" [(ngModel)]="editedPost.content" name="content"
+                maxLength="255" required="required" #contentField>
+        <md-hint align="end">{{contentField.characterCount}} / 255</md-hint>
+      </md-input>
+    </form>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button color="accent" (click)="savePost(editedPost)">save</button>
+    <button md-raised-button color="primary" (click)="cancelEdit()">cancel</button>
+  </md-card-actions>
+</md-card>
+<md-card *ngFor="let post of posts" class="postcard">
+  <md-card-title>{{post.title}}</md-card-title>
+  <md-card-content>
+    <p>{{post.content}}</p>
+    <md-list>
+      <md-list-item>
+        <p md-line>id: {{post.id}}</p>
+        <p md-line>createdDate: {{post.createdDate | date:"dd.MM.yyyy HH:mm"}}</p>
+        <p md-line>updatedDate: {{post.createdDate | date:"dd.MM.yyyy HH:mm"}}</p>
+        <p md-line>version: {{post.version}}</p>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button color="primary" (click)="editPost(post)">edit</button>
+    <button md-raised-button color="accent" (click)="removePost(post)">remove</button>
+  </md-card-actions>
+</md-card>

@@ -1,0 +1,6 @@
+@import '~@angular/material/core/theming/prebuilt/deeppurple-amber';
+
+$fa-font-path: '~font-awesome/fonts/';
+
+$background-color: #dedede;
+$primary-color: map_get($primary,default);
