@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 /**
- * Created by Tomasz Kucharzyk
+ * Created by Tomcy John
  */
 @Component
 public class ErrorPageConfig implements ErrorPageRegistrar {

@@ -12,7 +12,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
 /**
- * Created by Tomasz Kucharzyk
+ * Created by Tomcy John
  */
 @Configuration
 @EnableResourceServer
