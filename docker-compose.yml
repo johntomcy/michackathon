@@ -5,8 +5,24 @@ services:
     ports:
      - 8888:8888
     environment:
-     - CONFIGURATION_REPOSITORY=https://github.com/shardis/spring-angular2-starter-configuration.git
+     - CONFIGURATION_REPOSITORY=https://github.com/johntomcy/michackathon-configuration.git
      - CONFIGURATION_BRANCH=master
+  ui-service:
+    image: dockerhackathon/michackathon-ui
+    ports:
+     - 8080:8080
+    depends_on:
+     - discovery-service
+     - auth-service
+     - user-api-service
+     - gateway-service
+    links:
+     - discovery-service
+     - gateway-service
+     - auth-service
+     - user-api-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   discovery-service:
     image: dockerhackathon/michackathon-discovery
     ports:
@@ -15,69 +31,61 @@ services:
      - config-service
     links:
      - config-service
-    entrypoint: ./wait-for-service.sh http://config-service:8888/health
-  api-service:
-    image: dockerhackathon/michackathon-api
+    entrypoint: ./wait-for-service.sh http://config-service:8888/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  auth-service:
+    image: dockerhackathon/michackathon-auth
     ports:
      - 8082:8082
     depends_on:
      - discovery-service
-     - auth-service
-    links:
-     - discovery-service
-     - auth-service
-     - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
-  auth-service:
-    image: dockerhackathon/michackathon-auth
-    ports:
-     - 8083:8083
-    depends_on:
-     - discovery-service
     links:
      - discovery-service
      - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
-  ui-service:
-    image: dockerhackathon/michackathon-ui
-    ports:
-     - 8080:8080
-    depends_on:
-     - discovery-service
-     - auth-service
-     - api-service
-     - gateway-service
-    links:
-     - discovery-service
-     - gateway-service
-     - auth-service
-     - api-service
-     - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   gateway-service:
     image: dockerhackathon/michackathon-gateway
     ports:
-      - 8090:8090
+      - 8100:8100
     depends_on:
       - discovery-service
     links:
       - discovery-service
       - auth-service
-      - api-service
+      - user-api-service
       - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  user-api-service:
+    image: dockerhackathon/michackathon-user-api
+    ports:
+     - 8101:8101
+    depends_on:
+     - discovery-service
+     - db-users
+    links:
+     - discovery-service
+     - auth-service
+     - config-service
+     - db-users
+    entrypoint: ./wait-for-it.sh db-users:5432 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   admin-service:
     image: dockerhackathon/michackathon-admin
     ports:
-      - 8084:8084
+      - 8777:8777
     depends_on:
       - discovery-service
     links:
       - discovery-service
       - auth-service
-      - api-service
+      - user-api-service
       - ui-service
       - config-service
-    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health
-  
-  
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  db-users:
+    image: postgres:9.6.0
+    ports:
+      - 6001:5432
+    environment:
+     - POSTGRES_DB=db_users
+     - POSTGRES_USER=db_users_user
+     - POSTGRES_PASSWORD=db_users_password
+     - PGDATA=/var/lib/postgresql/data/pgdata

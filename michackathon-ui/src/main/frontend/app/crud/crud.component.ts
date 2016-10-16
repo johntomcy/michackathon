@@ -110,7 +110,7 @@ export class CrudComponent implements OnInit {
   }
 
   private scrollToTop() {
-    let contentEl = document.querySelector('md-sidenav-layout > md-content');
+    let contentEl = document.querySelector('md-sidenav-layout > .md-sidenav-content');
     if (contentEl) {
       this.scrollTo(contentEl, 0, 100);
     }

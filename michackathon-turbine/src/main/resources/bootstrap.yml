@@ -1,0 +1,31 @@
+# SERVICE VERSION
+info:
+    version: @project.version@
+
+# PROFILES
+spring:
+    application.name: turbine-service
+    profiles.active: @default.spring.profiles@
+  cloud:
+    config:
+      failFast: true  # Will not start service if no config server found
+      uri: http://config-service:8888 # Location of config server (needed if discovery.enabled=false)
+
+---
+
+spring:
+  profiles: docker
+  cloud:
+    config:
+      uri: http://config-service:8888
+  rabbitmq:
+    addresses: rabbit-mq-server:5672
+
+---
+
+spring:
+    profiles: standalone
+    cloud:
+        config:
+            uri: http://config-service:8888
+
