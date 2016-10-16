@@ -11,12 +11,14 @@
 michackathon-common/target/
 michackathon-discovery/target/
 michackathon-auth/target/
-michackathon-api/target/
+michackathon-user-api/target/
 michackathon-ui/target/
 michackathon-admin/target/
 michackathon-gateway/target/
 michackathon-config/target/
-/target/
+michackathon-turbine/target/
+michackathon-hystrix-dashboard/target/
+target/
 
 ### node
 npm-debug.log

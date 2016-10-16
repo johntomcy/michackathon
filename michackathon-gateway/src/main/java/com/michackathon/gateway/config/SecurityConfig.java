@@ -1,4 +1,4 @@
-package com.shardis.gateway.config;
+package com.michackathon.gateway.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
@@ -12,7 +12,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.web.authentication.HttpStatusEntryPoint;
 
 /**
- * Created by Tarun Sukhu
+ * Created by Tomcy John
  */
 @Configuration
 @EnableResourceServer
@@ -22,7 +22,7 @@ public class SecurityConfig implements ResourceServerConfigurer {
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("shardis-gateway");
+        resources.resourceId("michackathon-gateway");
     }
 
     @Override

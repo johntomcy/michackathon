@@ -15,7 +15,7 @@ export class TitleService {
 
     return this
       .http
-      .get('/api/title', {headers: this.authService.getAuthorizationHeaders()})
+      .get('/api/user/title', {headers: this.authService.getAuthorizationHeaders()})
       .map(res => res.json());
   }
 }

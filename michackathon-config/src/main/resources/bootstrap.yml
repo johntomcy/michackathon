@@ -9,7 +9,7 @@ spring:
         config:
             server:
                 git:
-                    uri: ${CONFIGURATION_REPOSITORY:https://github.com/shardis/spring-angular2-starter-configuration.git}
+                    uri: ${CONFIGURATION_REPOSITORY:https://github.com/johntomcy/michackathon-configuration.git}
                 default-label: ${CONFIGURATION_BRANCH:master}
 
 # SERVICE VERSION

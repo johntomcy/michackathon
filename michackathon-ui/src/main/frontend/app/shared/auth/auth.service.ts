@@ -163,7 +163,7 @@ export class AuthService {
   }
 
   // private fetchUserData() {
-  //   this.http.get('/api/user', {headers: this.getAuthorizationHeaders()})
+  //   this.http.get('/api/user/user', {headers: this.getAuthorizationHeaders()})
   //       .subscribe(
   //           data => {
   //             this.userData = data.json();
