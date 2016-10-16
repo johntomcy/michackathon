@@ -89,3 +89,8 @@ services:
      - POSTGRES_USER=db_users_user
      - POSTGRES_PASSWORD=db_users_password
      - PGDATA=/var/lib/postgresql/data/pgdata
+  db-couch:
+    image: couchbase:community
+    ports:
+      - 8091-8094:8091-8094
+      - 11210:11210
