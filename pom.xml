@@ -177,6 +177,11 @@
                 <artifactId>michackathon-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.michackathon</groupId>
+                <artifactId>michackathon-couchbase</artifactId>
+                <version>${project.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
