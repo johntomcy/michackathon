@@ -80,6 +80,17 @@ services:
       - ui-service
       - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  hystrix-dashboard-service:
+    image: dockerhackathon/michackathon-hystrix-dashboard
+    ports:
+     - 8383:8383
+    depends_on:
+     - discovery-service
+     - config-service
+    links:
+     - discovery-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   db-users:
     image: postgres:9.6.0
     ports:

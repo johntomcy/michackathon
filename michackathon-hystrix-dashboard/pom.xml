@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.michackathon</groupId>
-    <artifactId>michackathon-hystrix-dashboard</artifactId>
-    <version>2.2.0</version>
-    <packaging>jar</packaging>
+	<groupId>com.michackathon</groupId>
+	<artifactId>michackathon-hystrix-dashboard</artifactId>
+	<version>2.2.0</version>
+	<packaging>jar</packaging>
 
-    <name>michackathon-hystrix-dashboard</name>
-    <description>michackathon-hystrix-dashboard</description>
+	<name>michackathon-hystrix-dashboard</name>
+	<description>michackathon-hystrix-dashboard</description>
 
-    <parent>
+	<parent>
         <groupId>com.michackathon</groupId>
         <artifactId>michackathon</artifactId>
         <version>2.2.0</version>
     </parent>
 
-    <dependencies>
-        <dependency>
+	<dependencies>
+		<dependency>
             <groupId>com.michackathon</groupId>
             <artifactId>michackathon-common</artifactId>
         </dependency>
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
+		</dependency>
+        
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix-dashboard</artifactId>
+		</dependency>
+
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-hystrix</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-oauth2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-security</artifactId>
-        </dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-turbine</artifactId>
+		</dependency>
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
@@ -55,9 +58,9 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-    </dependencies>
+	</dependencies>
 
-    <build>
+	<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -69,6 +72,5 @@
             </plugin>
         </plugins>
     </build>
-
 
 </project>
