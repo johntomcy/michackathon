@@ -118,3 +118,42 @@ services:
        - config-service
        - db-couch
       entrypoint: ./wait-for-it.sh db-couch:8091 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  elasticsearch:
+   image: elasticsearch:2.2
+   restart: always
+  #  log_opt:
+  #     max-size: "10m"
+  #     max-file: "10"
+   ports:
+      - 9200:9200
+   volumes:
+      - ./michackathon-elasticsearch/data:/usr/share/michackathon-elasticsearch/data
+  logstash:
+   build: michackathon-logstash
+   restart: always
+  #  log_opt:
+  #     max-size: "10m"
+  #     max-file: "10"
+   command: logstash -f /config-dir/logstash.conf
+   ports:
+     - 5044:5044
+   links:
+     - elasticsearch
+  kibana:
+   image: kibana:4.4
+   restart: always
+  #  log_opt:
+  #     max-size: "10m"
+  #     max-file: "10"
+   ports:
+      - 5601:5601
+   links:
+      - elasticsearch
+  curator:
+   build: michackathon-curator
+   restart: always
+  #  log_opt:
+  #     max-size: "10m"
+  #     max-file: "10"
+   links:
+      - elasticsearch

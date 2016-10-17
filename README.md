@@ -12,8 +12,9 @@ This project is obviously a fork of an existing sample taken from github but thi
 To run the project, do the following:
 * Install docker on your machine (mac or windows)
 * Clone the repo
-* From the root of the project run ``` mvn install ```
+* From the root of the project run ``` mvn install -DskipTests```
 * If the system complains maven or its version issue, install maven greater than 3.3.3 (in mac i use brew to install maven ``` brew install maven ```)
+* Build additional docker images by running ``` docker-compose build ```
 * If the build is successful then run the docker compose ``` docker-compose up ```
 
 Note: The docker compose looks into docker-compose.yml and starts the various dockers in a meaningful order
