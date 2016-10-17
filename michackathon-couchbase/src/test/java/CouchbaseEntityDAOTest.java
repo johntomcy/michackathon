@@ -3,6 +3,8 @@ import com.couchbase.client.java.Bucket;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.UUID;
+
 /**
  * Created by pankajmisra on 10/16/16.
  */
@@ -22,7 +24,7 @@ public class CouchbaseEntityDAOTest {
         entity.setName("Test");
         CouchbaseClient client  = CouchbaseClient.getConnection("couchbase://127.0.0.1", "default");
         SampleEntityDAO dao = new SampleEntityDAO(client, SampleEntity.class);
-        dao.put(entity.getName()+entity.getAge(), entity);
+        dao.put(UUID.randomUUID().toString(), entity);
     }
 
 }

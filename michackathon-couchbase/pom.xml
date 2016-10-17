@@ -11,6 +11,7 @@
 
     <artifactId>michackathon-couchbase</artifactId>
 
+
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.couchbase.client/java-client -->
         <dependency>
