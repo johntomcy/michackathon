@@ -95,7 +95,7 @@ services:
       - 8091-8094:8091-8094
       - 11210:11210
   travel-history-api-service:
-      image: dockerhackathon/michackathon-user-api
+      image: dockerhackathon/michackathon-travel-history-api
       ports:
        - 8102:8102
       depends_on:
