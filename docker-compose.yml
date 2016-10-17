@@ -94,3 +94,16 @@ services:
     ports:
       - 8091-8094:8091-8094
       - 11210:11210
+  travel-history-api-service:
+      image: dockerhackathon/michackathon-user-api
+      ports:
+       - 8102:8102
+      depends_on:
+       - discovery-service
+       - db-couch
+      links:
+       - discovery-service
+       - auth-service
+       - config-service
+       - db-couch
+      entrypoint: ./wait-for-it.sh db-couch:8091 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
