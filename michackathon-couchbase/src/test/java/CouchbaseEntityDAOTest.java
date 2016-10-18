@@ -1,5 +1,6 @@
 import com.couchbase.client.deps.com.fasterxml.jackson.core.JsonProcessingException;
 import com.couchbase.client.java.Bucket;
+import com.michackathon.couchbase.CouchbaseClient;
 import org.junit.Assert;
 import org.junit.Test;
 

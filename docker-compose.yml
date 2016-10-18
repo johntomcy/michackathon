@@ -116,7 +116,6 @@ services:
        - discovery-service
        - auth-service
        - config-service
-       - db-couch
       entrypoint: ./wait-for-it.sh db-couch:8091 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   elasticsearch:
    image: elasticsearch:2.2

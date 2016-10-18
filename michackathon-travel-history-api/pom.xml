@@ -6,7 +6,7 @@
 
     <groupId>com.michackathon</groupId>
     <artifactId>michackathon-travel-history-api</artifactId>
-    <version>2.2.0</version>
+    <version>${parent.version}</version>
     <packaging>jar</packaging>
 
     <name>michackathon-travel-history-api</name>
@@ -23,6 +23,7 @@
         <dependency>
             <groupId>com.michackathon</groupId>
             <artifactId>michackathon-couchbase</artifactId>
+            <version>${parent.version}</version>
         </dependency>
         <dependency>
             <groupId>com.michackathon</groupId>
@@ -43,10 +44,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
