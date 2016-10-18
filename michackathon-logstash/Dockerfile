@@ -1,4 +1,4 @@
-FROM logstash:2.2
+FROM logstash:2.3
 
 # add custom config
 COPY logstash.conf /config-dir/logstash.conf

@@ -5,6 +5,8 @@ import com.michackathon.dto.commons.ValueObject;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.security.Principal;
 
@@ -16,9 +18,12 @@ import java.security.Principal;
 @RequestMapping("/user/")
 public class UserRestController {
 
+    private static final Logger log = LoggerFactory.getLogger(UserRestController.class);
+
     @RequestMapping("/title")
     @HystrixCommand(fallbackMethod = "defaultUserTitle")
     public ValueObject getTitle(Principal user) {
+        log.info("Inside getTitle method..");
         return new ValueObject("API SERVER IS ALIVE" + (user == null ? "" : " " + user.getName()));
     }
 
