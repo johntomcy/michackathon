@@ -23,8 +23,7 @@
         <module>michackathon-admin</module>
         <module>michackathon-travel-history-api</module>
         <module>michackathon-couchbase</module>
-
-        <!--<module>michackathon-turbine</module>-->
+        <module>michackathon-turbine</module>
         <module>michackathon-hystrix-dashboard</module>
     </modules>
 

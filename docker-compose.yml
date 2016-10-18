@@ -91,6 +91,18 @@ services:
      - discovery-service
      - config-service
     entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  turbine-service:
+    image: dockerhackathon/michackathon-turbine
+    ports:
+     - 8989:8989
+    depends_on:
+     - discovery-service
+     - config-service
+    links:
+     - discovery-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+
   db-users:
     image: postgres:9.6.0
     ports:
