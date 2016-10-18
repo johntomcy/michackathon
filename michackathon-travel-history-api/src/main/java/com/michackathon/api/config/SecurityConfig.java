@@ -22,7 +22,7 @@ public class SecurityConfig implements ResourceServerConfigurer {
 
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-        resources.resourceId("michackathon-travel-history-api");
+        resources.resourceId("michackathon-api");
     }
 
     @Override
