@@ -61,6 +61,10 @@ services:
     depends_on:
      - discovery-service
      - db-users
+     - elasticsearch
+     - logstash
+     - kibana
+     - curator
     links:
      - discovery-service
      - auth-service
@@ -125,6 +129,7 @@ services:
   #     max-file: "10"
    ports:
       - 9200:9200
+      - 9300:9300
    volumes:
       - ./michackathon-elasticsearch/data:/usr/share/michackathon-elasticsearch/data
   logstash:
