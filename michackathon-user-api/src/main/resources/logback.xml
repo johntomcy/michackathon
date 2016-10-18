@@ -1,4 +1,54 @@
-<configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <jmxConfigurator/>
+<configuration scan="true" scanPeriod="30 seconds">
+    <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <jsonGeneratorDecorator class="com.emirates.airportgui.service.LogPrettyPrintDecorator"/>
+        </encoder>
+    </appender>-->
+ 
+ 
+    <appender name="FILE" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <remoteHost>localhost</remoteHost>
+        <port>5044</port>
+        <waitStrategyType>sleeping</waitStrategyType>
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <!--
+            <customFields>{"applicationName":"sample-service","environmentName":"dev", "document_id":""}</customFields>
+            <fieldNames>
+                <applicationName>applicationName</applicationName>
+                <environmentName>environmentName</environmentName>
+                <dcoument_id></dcoument_id>
+                <hostname>hostname</hostname>
+                <level>level</level>
+                <thread>threadName</thread>
+                <logger>loggerName</logger>
+                <timestamp>timestamp</timestamp>
+                <message>message</message>
+                <version>[ignore]</version>
+                <levelValue>[ignore]</levelValue>
+            </fieldNames>
+            -->
+        </encoder>
+    </appender>
+ 
+    <!--<appender name="ASYNC-STDOUT" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="STDOUT" />
+    </appender>-->
+ 
+    <appender name="ASYNC-FILE" class="ch.qos.logback.classic.AsyncAppender">
+        <appender-ref ref="FILE" />
+    </appender>
+ 
+    <!--
+    <appender name="ACCESS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>access.log</file>
+        <encoder class="net.logstash.logback.encoder.LogstashAccessEncoder" />
+    </appender>
+    -->
+ 
+ 
+ 
+    <root level="INFO">
+        <!--<appender-ref ref="ASYNC-STDOUT"/>-->
+        <appender-ref ref="FILE" />
+    </root>
 </configuration>
