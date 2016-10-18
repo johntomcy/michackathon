@@ -1,3 +1,5 @@
+package com.michackathon.couchbase;
+
 import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.CouchbaseCluster;
 

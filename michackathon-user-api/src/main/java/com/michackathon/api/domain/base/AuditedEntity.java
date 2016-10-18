@@ -1,6 +1,6 @@
 package com.michackathon.api.domain.base;
 
-import com.michackathon.api.domain.user.User;
+import com.michackathon.api.domain.travelHistory.User;
 import org.hibernate.envers.Audited;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
