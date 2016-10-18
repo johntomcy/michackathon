@@ -1,4 +1,4 @@
-package com.michackathon.api.domain.user;
+package com.michackathon.api.domain.travelHistory;
 
 import com.michackathon.api.domain.base.AuditedEntity;
 

@@ -1,4 +1,4 @@
-package com.michackathon.api.domain.user;
+package com.michackathon.api.domain.travelHistory;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
