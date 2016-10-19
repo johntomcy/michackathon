@@ -11,6 +11,15 @@ public class Flight {
     private String origin;
     private Date depDate;
     private String flightNumber;
+    private String destination;
+
+    public String getDestination() {
+        return destination;
+    }
+
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
 
     public String getFlightId() {
         return flightId;
