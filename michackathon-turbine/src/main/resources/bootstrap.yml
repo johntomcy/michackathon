@@ -19,7 +19,7 @@ spring:
     config:
       uri: http://config-service:8888
   rabbitmq:
-    addresses: rabbit-mq-server:5672
+    addresses: rabbit-mq-server:15672
 
 ---
 

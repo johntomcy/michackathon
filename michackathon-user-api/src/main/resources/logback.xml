@@ -1,4 +1,5 @@
 <configuration scan="true" scanPeriod="30 seconds">
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
     <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">
             <jsonGeneratorDecorator class="com.emirates.airportgui.service.LogPrettyPrintDecorator"/>
@@ -7,7 +8,7 @@
  
  
     <appender name="FILE" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <remoteHost>localhost</remoteHost>
+        <remoteHost>logstash</remoteHost>
         <port>5044</port>
         <waitStrategyType>sleeping</waitStrategyType>
         <encoder class="net.logstash.logback.encoder.LogstashEncoder">

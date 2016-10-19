@@ -136,9 +136,6 @@ services:
   elasticsearch:
       image: elasticsearch:2.2
       restart: always
-      #  log_opt:
-      #     max-size: "10m"
-      #     max-file: "10"
       ports:
           - 9200:9200
           - 9300:9300
@@ -147,9 +144,6 @@ services:
   logstash:
       build: michackathon-logstash
       restart: always
-      #  log_opt:
-      #     max-size: "10m"
-      #     max-file: "10"
       command: logstash -f /config-dir/logstash.conf
       ports:
         - 5044:5044
@@ -160,22 +154,21 @@ services:
   kibana:
       image: kibana:4.4
       restart: always
-      #  log_opt:
-      #     max-size: "10m"
-      #     max-file: "10"
       ports:
-          - 5601:5601
+        - 5601:5601
       depends_on:
         - elasticsearch
       links:
-          - elasticsearch
+        - elasticsearch
   curator:
       build: michackathon-curator
       restart: always
-      #  log_opt:
-      #     max-size: "10m"
-      #     max-file: "10"
       depends_on:
         - elasticsearch
       links:
-          - elasticsearch
+        - elasticsearch
+  rabbitmq:
+      image: rabbitmq:3.6.5
+      restart: always
+      ports:
+        - 15672:15672

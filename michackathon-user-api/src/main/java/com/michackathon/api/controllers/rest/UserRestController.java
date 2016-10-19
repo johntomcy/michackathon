@@ -24,6 +24,9 @@ public class UserRestController {
     @HystrixCommand(fallbackMethod = "defaultUserTitle")
     public ValueObject getTitle(Principal user) {
         log.info("Inside getTitle method..");
+
+        log.debug("Sample Debug Message");
+		log.trace("Sample Trace Message");
         return new ValueObject("API SERVER IS ALIVE" + (user == null ? "" : " " + user.getName()));
     }
 
@@ -33,6 +36,7 @@ public class UserRestController {
 
     @RequestMapping("/user")
     public Principal user(Principal user) {
+        log.info("Inside user method..");
         return user;
     }
 

@@ -18,10 +18,6 @@
         <version>2.2.0</version>
     </parent>
 
-    <properties>
-        <start-class>com.michackathon.turbine.MichackathonTurbineApplication</start-class>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.michackathon</groupId>
@@ -29,17 +25,13 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-turbine-amqp</artifactId>
+            <artifactId>spring-cloud-starter-turbine</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <dependency>
-            <groupId>de.codecentric</groupId>
-            <artifactId>spring-boot-admin-starter-client</artifactId>
-            <version>${spring-boot-admin-starter-client.version}</version>
-        </dependency>
+        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
