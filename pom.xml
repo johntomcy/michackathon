@@ -25,6 +25,7 @@
         <module>michackathon-couchbase</module>
         <module>michackathon-turbine</module>
         <module>michackathon-hystrix-dashboard</module>
+        <module>michackathon-node-sidecar</module>
     </modules>
 
     <properties>

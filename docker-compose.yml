@@ -172,3 +172,22 @@ services:
       restart: always
       ports:
         - 15672:15672
+  node-service:
+      build: michackathon-node-service
+      restart: always
+      ports:
+        - 3000:3000
+  node-sidecar-service:
+    image: dockerhackathon/michackathon-node-sidecar
+    restart: always
+    ports:
+     - 8741:8741
+    depends_on:
+     - discovery-service
+     - config-service
+     - node-service
+    links:
+     - discovery-service
+     - node-service
+     - config-service
+    entrypoint: ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
