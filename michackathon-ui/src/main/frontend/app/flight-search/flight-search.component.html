@@ -1,3 +1,124 @@
-<p>
-  flight-search works!
-</p>
+<!-- md-toolbar align="end">
+  <button md-raised-button color="primary" (click)="newPost()">new post</button>
+  <button md-raised-button color="secondary" (click)="refresh()">refresh</button>
+</md-toolbar -->
+
+
+<md-card *ngIf="editing">
+  <md-card-title>Flight Search</md-card-title>
+  <md-card-content>
+    <form #searchFlightForm="ngForm">
+      <md-input placeholder="Departure Airport" [(ngModel)]="flightCriteria.departure" name="departure" maxLength="100" required="required"
+                #sourceField>
+        <!--   md-hint align="end">{{titleField.characterCount}} / 100</md-hint --> 
+      </md-input>
+	  <md-input placeholder="Arrival Airport" [(ngModel)]="flightCriteria.arrival" name="arrival" maxLength="100" required="required"
+                #sourceField>
+        <!--  md-hint align="end">{{titleField.characterCount}} / 100</md-hint -->
+      </md-input>
+	  <md-input type="date" placeholder="Departure date" [(ngModel)]="flightCriteria.travelDate" name="travelDate" required="required"
+                #sourceField>
+        <!--  md-hint align="end">{{titleField.characterCount}} / 100</md-hint -->
+      </md-input>
+     
+    </form>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-raised-button color="accent" (click)="search(flightCriteria)">Search Flights</button>
+    <button md-raised-button color="primary" (click)="resetCriteria()">Reset</button>
+  </md-card-actions>
+</md-card>
+<div class="container">
+    <div class="col-xs-12 col-md-offset-2">
+
+        <div class="page-header">
+            <h2>
+                <span>Flight Availability Results </span><br/>
+            </h2>
+        </div>
+        
+        <div class="panel panel-default">
+<md-card *ngFor="let flight of flights" class="postcard">
+  <md-card-title>{{flight.departure}} - {{flight.arrival}}</md-card-title>
+  <md-card-content>
+    <md-list>
+      <md-list-item>
+        <p md-line>Source: {{flight.departure}}</p>
+		 <p md-line>Destination: {{flight.arrival}}</p>
+        <p md-line>DepartureDate: {{flight.departureDate | date:"dd.MM.yyyy HH:mm"}}</p>
+        <p md-line>ArrivalDate: {{flight.arrivalDate | date:"dd.MM.yyyy HH:mm"}}</p>
+        <p md-line>price: {{flight.price}}</p>
+      </md-list-item>
+    </md-list>
+  </md-card-content>
+</md-card>
+ </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-xs-12 col-md-offset-2">
+
+        <div class="page-header">
+            <h2>
+                <span>Flight offers </span><br/>
+            </h2>
+        </div>
+        
+        <div class="panel panel-default">
+			<md-card *ngFor="let flight of recommendations" class="postcard">
+				<md-card-title>{{flight.departure}} - {{flight.arrival}}</md-card-title>
+			  <md-card-content>
+				<md-list>
+				  <md-list-item>
+					<p md-line>Source: {{flight.departure}}</p>
+					 <p md-line>Destination: {{flight.arrival}}</p>
+					<p md-line>DepartureDate: {{flight.departureDate | date:"dd.MM.yyyy HH:mm"}}</p>
+					<p md-line>ArrivalDate: {{flight.arrivalDate | date:"dd.MM.yyyy HH:mm"}}</p>
+					<p md-line>price: {{flight.price}}</p>
+				  </md-list-item>
+				</md-list>
+			  </md-card-content>
+			</md-card>
+            <!-- table class="table table-striped" [mfData]="data" #mf="mfDataTable" [mfRowsOnPage]="10">
+                <thead>
+                <tr>
+                    <th style="width: 10%"></th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="name">Name</mfDefaultSorter>
+                    </th>
+                    <th style="width: 40%">
+                        <mfDefaultSorter by="email">Email</mfDefaultSorter>
+                    </th>
+                    <th style="width: 10%">
+                        <mfDefaultSorter by="age">Age</mfDefaultSorter>
+                    </th>
+                    <th style="width: 20%">
+                        <mfDefaultSorter by="city">City</mfDefaultSorter>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="#item of mf.data">
+                    <td>
+                      <button class="btn btn-danger" title="remove" (click)="removeItem(item)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                      </button>
+                    </td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.email}}</td>
+                    <td class="text-right">{{item.age}}</td>
+                    <td>{{item.city | uppercase}}</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5">
+                        <mfBootstrapPaginator [rowsOnPageSet]="[5,10,15]"></mfBootstrapPaginator>
+                    </td>
+                </tr>
+                </tfoot>
+            </table -->
+        </div>
+    </div>
+</div>
