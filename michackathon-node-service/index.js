@@ -4,15 +4,24 @@ const express = require('express')
 const faker = require('faker/locale/zh_CN')
 const logger = require('morgan')
 const services = require('./service')
+const cors = require('cors')
 var jsonfile = require('jsonfile')
 
 const app = express()
+
+app.use(cors());
 
 var airports = null
 
 var file = 'airports.json'
 jsonfile.readFile(file, function(err, obj) {
     airports = obj
+})
+
+app.get('/', (req, res) => {
+    res.json({
+        status: 'Tomcy Service'
+    })
 })
 
 app.use(logger('combined'))
