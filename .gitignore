@@ -18,6 +18,7 @@ michackathon-gateway/target/
 michackathon-config/target/
 michackathon-turbine/target/
 michackathon-hystrix-dashboard/target/
+michackathon-node-service/node_modules/
 target/
 
 ### node

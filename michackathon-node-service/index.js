@@ -12,10 +12,22 @@ const app = express()
 app.use(cors());
 
 var airports = null
+var airportssearch = null
+var recommendations = null
 
-var file = 'airports.json'
-jsonfile.readFile(file, function(err, obj) {
+var airportfile = 'airports.json'
+jsonfile.readFile(airportfile, function(err, obj) {
     airports = obj
+})
+
+var airportsearchfile = 'searchdata.json'
+jsonfile.readFile(airportsearchfile, function(err, obj) {
+    airportssearch = obj
+})
+
+var recommendationfile = 'recommendations.json'
+jsonfile.readFile(recommendationfile, function(err, obj) {
+    recommendations = obj
 })
 
 app.get('/', (req, res) => {
@@ -43,8 +55,19 @@ app.get('/airports/iatacode/:startswith', (req, res) => {
     ))
 })
 
+app.get('/flights/search', (req, res) => {
+    res.json(airportssearch)
+    // res.json({
+    //     status: 'UP'
+    // })
+})
+
+app.get('/flights/recommendations', (req, res) => {
+    res.json(recommendations)
+})
+
 app.get('/config', (req, res) => {
-    services.getConfig('user-api-service').then((config) => {
+    services.getConfig('node-sidecar-service').then((config) => {
         res.json(config)
     }).catch((e)=> next(e))
 })
