@@ -167,11 +167,11 @@ services:
         - elasticsearch
       links:
         - elasticsearch
-  rabbitmq:
-      image: rabbitmq:3.6.5
-      restart: always
-      ports:
-        - 15672:15672
+  # rabbitmq:
+  #     image: rabbitmq:3.6.5
+  #     restart: always
+  #     ports:
+  #       - 15672:15672
   node-service:
       build: michackathon-node-service
       restart: always
