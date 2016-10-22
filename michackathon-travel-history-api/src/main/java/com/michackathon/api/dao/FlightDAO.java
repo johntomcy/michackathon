@@ -35,7 +35,6 @@ public class FlightDAO extends CouchbaseEntityDAO<Flight> {
 
     public List<Flight> searchFlights(String origin, String dest, Date dateOfTravel) throws IOException {
         List<Flight> flights = null;
-
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         String effectiveQuery = QRY_SEARCH_FLIGHTS_WITH_DEST;
         if (dest == null || dest.trim().length()==0 ) {

@@ -2,6 +2,7 @@ package com.michackathon.api.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -9,8 +10,13 @@ import java.util.Date;
  */
 public class FlightSearch {
 
+    @NotNull
     private String origin;
+
+    @NotNull
     private String destination;
+
+    @NotNull
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private Date depDate;
 

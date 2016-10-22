@@ -7,9 +7,7 @@ import com.michackathon.api.domain.Flight;
 import com.michackathon.api.domain.Recommendation;
 import com.michackathon.api.model.FlightSearch;
 import com.michackathon.couchbase.CouchbaseClient;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -25,9 +23,9 @@ public class RecommendationController {
 
     @RequestMapping(value = "/search",method = RequestMethod.POST,
         consumes = "application/json",produces = "application/json")
-    public List<Recommendation> getRecommendations(String custId, FlightSearch search) throws IOException {
+    public List<Recommendation> getRecommendations(@RequestParam String custId, @RequestBody FlightSearch search) throws IOException {
         List<Recommendation> recommendations = new ArrayList<>();
-        CouchbaseClient client = CouchbaseClient.getConnection("couchbase://localhost:8091", "default");
+        CouchbaseClient client = CouchbaseClient.getConnection("db-couch:8091", "default");
         if (client != null) {
             RecommendationDAO dao = new RecommendationDAO(client, Recommendation.class);
             Double netSpend = dao.getNetSpendTillDate(custId);
@@ -52,8 +50,8 @@ public class RecommendationController {
 
     @RequestMapping(value = "/rateRecommendation",method = RequestMethod.POST,
         consumes = "application/json",produces = "application/json")
-    public void saveRecommendationRating(Recommendation recommendation) throws JsonProcessingException {
-        CouchbaseClient client = CouchbaseClient.getConnection("couchbase://localhost:8091", "default");
+    public void saveRecommendationRating(@RequestBody Recommendation recommendation) throws JsonProcessingException {
+        CouchbaseClient client = CouchbaseClient.getConnection("db-couch:8091", "default");
         if (client != null) {
             RecommendationDAO dao = new RecommendationDAO(client, Recommendation.class);
             dao.put(UUID.randomUUID().toString(), recommendation);
