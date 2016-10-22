@@ -1,9 +1,16 @@
 [
-    "header.md",
-    "preamble.md",
-    "solution.md",
-    "solarch.md",
+    "header.html",
+    "fatigue.html",
+    "jokesapart.html",
+    "backtohack.html",
+    "sb.html",
+    "storyboard.html",
+    "principle.html",
+    "solution.html",
+    "solarch.html",
+    "solarchdiagram.html",
     "cicd.md",
     "logging.md",
-    "thank.md"
+    "thank.html",
+    "demo1.html"
 ]

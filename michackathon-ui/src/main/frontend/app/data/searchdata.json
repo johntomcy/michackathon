@@ -6,11 +6,74 @@
       "price": 500
       
     },{
+	"departure": "DXB",
+      "arrival": "bomm",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 600
+      
+    },{
+	"departure": "DXB",
+      "arrival": "BOM",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 700
+      
+    },{
+	"departure": "DXB",
+      "arrival": "BOM",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 800
+      
+    },{
+	"departure": "DXB",
+      "arrival": "BOM",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 900
+      
+    },{
+	"departure": "DXB",
+      "arrival": "BOM",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 1000
+      
+    },{
+	"departure": "DXB",
+      "arrival": "BOM",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 1100
+      
+    },{
+	"departure": "DXB",
+      "arrival": "BOM",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 1200
+      
+    },{
+	"departure": "DXB",
+      "arrival": "BOM",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 1300
+      
+    },{
+	"departure": "DXB",
+      "arrival": "BOM",
+      "arrivalDate": "2016-01-09T14:48:34-08:00",
+      "departureDate": "2016-01-09T14:48:34-08:00",
+      "price": 1400
+      
+    },{
       "departure": "DXB",
       "arrival": "BOM",
       "arrivalDate": "2016-01-09T14:48:34-08:00",
       "departureDate": "2016-01-09T14:48:34-08:00",
-      "price": 600
+      "price": 1500
       
     }
 ]

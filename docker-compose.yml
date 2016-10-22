@@ -35,7 +35,7 @@ services:
   auth-service:
     image: dockerhackathon/michackathon-auth
     ports:
-     - 8082:8082
+     - 8082
     depends_on:
      - discovery-service
     links:
@@ -45,7 +45,7 @@ services:
   gateway-service:
     image: dockerhackathon/michackathon-gateway
     ports:
-      - 8100:8100
+      - 8100
     depends_on:
       - discovery-service
     links:
@@ -57,7 +57,7 @@ services:
   user-api-service:
     image: dockerhackathon/michackathon-user-api
     ports:
-     - 8101:8101
+     - 8101
     depends_on:
      - discovery-service
      - db-users
@@ -124,7 +124,7 @@ services:
   travel-history-api-service:
       image: dockerhackathon/michackathon-travel-history-api
       ports:
-       - 8102:8102
+       - 8102
       depends_on:
        - discovery-service
        - db-couch
@@ -167,21 +167,21 @@ services:
         - elasticsearch
       links:
         - elasticsearch
-  rabbitmq:
-      image: rabbitmq:3.6.5
-      restart: always
-      ports:
-        - 15672:15672
+  # rabbitmq:
+  #     image: rabbitmq:3.6.5
+  #     restart: always
+  #     ports:
+  #       - 15672:15672
   node-service:
       build: michackathon-node-service
       restart: always
       ports:
-        - 3000:3000
+        - 3000
   node-sidecar-service:
     image: dockerhackathon/michackathon-node-sidecar
     restart: always
     ports:
-     - 8741:8741
+     - 8741
     depends_on:
      - discovery-service
      - config-service
