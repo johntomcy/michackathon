@@ -89,13 +89,13 @@ public class DataLoader {
         if (dxbSourceDest == 0) {
             flt.setOrigin("DXB");
         } else {
-            flt.setOrigin(iataAirports.get(randomData.nextInt(0, 1766)).get("Code"));
+            flt.setOrigin(iataAirports.get(randomData.nextInt(0, 1765)).get("Code"));
         }
 
         if (dxbSourceDest == 1) {
             flt.setDestination("DXB");
         } else {
-            flt.setDestination(iataAirports.get(randomData.nextInt(0, 1766)).get("Code"));
+            flt.setDestination(iataAirports.get(randomData.nextInt(0, 1765)).get("Code"));
         }
 
         flt.setPrice(Double.valueOf(decFormat.format(randomData.nextUniform(1000.0, 4000.0))));
