@@ -1,17 +1,11 @@
 package com.michackathon.api.controllers.rest;
 
 
-import com.michackathon.api.domain.travelHistory.TravelHistory;
-import com.michackathon.dto.commons.ValueObject;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestHeader;
+import com.michackathon.api.domain.TravelHistory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-
-
-import java.security.Principal;
 
 
 @RestController
@@ -28,6 +22,7 @@ public class TravelHistoryRestController {
     public TravelHistory defaultTravelHistory(TravelHistory travel) {
         return new TravelHistory();
     }
+
 
 
 }

@@ -1,4 +1,4 @@
-package com.michackathon.api.domain.travelHistory;
+package com.michackathon.api.domain;
 
 /**
  * Created by pankajmisra on 10/19/16.
@@ -8,6 +8,13 @@ public class Customer {
     private String custId;
     private String firstName;
     private String lastName;
+    private final String type = "customer";
+
+    public String getType() {
+        return type;
+    }
+
+
 
     public String getCustId() {
         return custId;

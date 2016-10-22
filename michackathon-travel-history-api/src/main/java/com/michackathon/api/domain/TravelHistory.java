@@ -1,4 +1,4 @@
-package com.michackathon.api.domain.travelHistory;
+package com.michackathon.api.domain;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -12,6 +12,21 @@ public class TravelHistory {
     private String id;
     private String custId;
     private String flightId;
+    private double price;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    private final String type = "travel-history";
+
+    public String getType() {
+        return type;
+    }
 
     public String getId() {
         return id;

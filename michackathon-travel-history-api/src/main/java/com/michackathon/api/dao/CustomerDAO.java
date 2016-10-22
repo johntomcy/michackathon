@@ -1,6 +1,6 @@
 package com.michackathon.api.dao;
 
-import com.michackathon.api.domain.travelHistory.Customer;
+import com.michackathon.api.domain.Customer;
 import com.michackathon.couchbase.CouchbaseClient;
 import com.michackathon.couchbase.CouchbaseEntityDAO;
 

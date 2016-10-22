@@ -1,4 +1,7 @@
-package com.michackathon.api.domain.travelHistory;
+package com.michackathon.api.domain;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.util.Date;
 
@@ -9,9 +12,25 @@ public class Flight {
 
     private String flightId;
     private String origin;
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private Date depDate;
     private String flightNumber;
     private String destination;
+    private double price;
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    private final String type = "flight";
+
+    public String getType() {
+        return type;
+    }
 
     public String getDestination() {
         return destination;
