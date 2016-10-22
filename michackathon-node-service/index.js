@@ -1,25 +1,40 @@
+"use strict";
+
 const express = require('express')
 const faker = require('faker/locale/zh_CN')
 const logger = require('morgan')
 const services = require('./service')
+const cors = require('cors')
+var jsonfile = require('jsonfile')
 
 const app = express()
 
+app.use(cors());
 
-let count = 100
-const books = new Array(count)
+var airports = null
+var airportssearch = null
+var recommendations = null
 
-while (count > 0) {
-    books[count] = {
-        id: count,
-        name: faker.name.title(),
-        authorId: parseInt(Math.random() * 100) + 1,
-        publishDate: faker.date.past().toLocaleString(),
-        des: faker.lorem.paragraph(),
-        ISBN: `ISBN 000-0000-00-0`
-    }
-    count --
-}
+var airportfile = 'airports.json'
+jsonfile.readFile(airportfile, function(err, obj) {
+    airports = obj
+})
+
+var airportsearchfile = 'searchdata.json'
+jsonfile.readFile(airportsearchfile, function(err, obj) {
+    airportssearch = obj
+})
+
+var recommendationfile = 'recommendations.json'
+jsonfile.readFile(recommendationfile, function(err, obj) {
+    recommendations = obj
+})
+
+app.get('/', (req, res) => {
+    res.json({
+        status: 'Tomcy Service'
+    })
+})
 
 app.use(logger('combined'))
 
@@ -29,39 +44,30 @@ app.get('/health', (req, res) => {
     })
 })
 
-app.get('/book/:id', (req, res, next) => {
-    const id = parseInt(req.params.id)
-    if(isNaN(id)){
-        next()
-    }
-    res.json(books[id])
+app.get('/airports', (req, res) => {
+    res.json(airports)
 })
 
-app.get('/book/:bookId/author', (req, res, next) => {
-    const bookId = parseInt(req.params.bookId)
-    if(isNaN(bookId)){
-        next()
-    }
-    const book = books[bookId]
-    if(book) {
-        let uid = book.authorId
-        services.getUserById(uid).then((user) => {
-            if(user.id) {
-                res.json(user)
-            }else{
-                throw new Error("user not found")
-            }
-        }).catch((error)=> next(error))
-    }
+app.get('/airports/iatacode/:startswith', (req, res) => {
+    const airportStartsWith = (req.params.startswith).toUpperCase()
+    res.json(airports.filter((airport)=>
+        airport.iata.startsWith(airportStartsWith)
+    ))
 })
 
-app.get('/books', (req, res, next) => {
-    const uid = req.query.uid
-    res.json(books.filter((book)=>book.authorId == uid))
+app.get('/flights/search', (req, res) => {
+    res.json(airportssearch)
+    // res.json({
+    //     status: 'UP'
+    // })
+})
+
+app.get('/flights/recommendations', (req, res) => {
+    res.json(recommendations)
 })
 
 app.get('/config', (req, res) => {
-    services.getConfig('user-api-service').then((config) => {
+    services.getConfig('node-sidecar-service').then((config) => {
         res.json(config)
     }).catch((e)=> next(e))
 })
