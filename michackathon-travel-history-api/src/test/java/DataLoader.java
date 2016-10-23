@@ -12,6 +12,7 @@ import io.codearte.jfairy.producer.person.Person;
 import org.apache.commons.math.random.RandomData;
 import org.apache.commons.math.random.RandomDataImpl;
 import org.joda.time.DateTime;
+import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
@@ -52,6 +53,22 @@ public class DataLoader {
             generateFlight(false);
         }
 
+    }
+
+    @Test
+    public void loadData() throws IOException, ParseException {
+        System.out.println(new File("").getAbsolutePath());
+        iataAirports = mapper.readValue(new File("michackathon-travel-history-api/src/main/resources/airports-iata.json"),
+            mapper.getTypeFactory().constructCollectionType(List.class,
+                Map.class));
+        mapper.setDateFormat(format);
+        //generate customer history with past flights
+        generateCustomer();
+
+        //generate future flights
+        for(int ctrFlts=0; ctrFlts < MAX_FLIGHTS; ctrFlts++) {
+            generateFlight(false);
+        }
     }
 
     private static void generateCustomer() throws JsonProcessingException, ParseException {
