@@ -1,5 +1,3 @@
-package com.michackathon.api.domain;
-
 /**
  * Created by pankajmisra on 10/19/16.
  */

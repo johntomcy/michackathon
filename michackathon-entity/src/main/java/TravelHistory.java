@@ -1,9 +1,3 @@
-package com.michackathon.api.domain;
-
-import org.springframework.format.annotation.DateTimeFormat;
-
-import java.util.Date;
-
 /**
  * Created by pankajmisra on 10/17/16.
  */
