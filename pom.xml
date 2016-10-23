@@ -26,6 +26,9 @@
         <module>michackathon-turbine</module>
         <module>michackathon-hystrix-dashboard</module>
         <module>michackathon-node-sidecar</module>
+        <module>michackathon-entity</module>
+        <module>michackathon-flight-api</module>
+        <module>michackathon-recommendation-api</module>
     </modules>
 
     <properties>

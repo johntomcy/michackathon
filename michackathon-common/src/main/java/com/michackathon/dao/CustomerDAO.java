@@ -1,11 +1,11 @@
-package com.michackathon.api.dao;
+package com.michackathon.dao;
 
-import com.michackathon.api.domain.Customer;
 import com.michackathon.couchbase.CouchbaseClient;
 import com.michackathon.couchbase.CouchbaseEntityDAO;
+import com.michackathon.entity.Customer;
 
 /**
- * Created by pankajmisra on 10/19/16.
+ * Created by pankajmisra on 10/23/16.
  */
 public class CustomerDAO extends CouchbaseEntityDAO<Customer> {
     public CustomerDAO(CouchbaseClient couchbaseClient, Class<Customer> type) {

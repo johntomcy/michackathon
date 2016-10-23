@@ -1,4 +1,4 @@
-package com.michackathon.api.model;
+package com.michackathon.model;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 

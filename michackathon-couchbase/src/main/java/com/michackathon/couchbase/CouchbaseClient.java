@@ -3,6 +3,8 @@ package com.michackathon.couchbase;
 import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.CouchbaseCluster;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * Created by pankajmisra on 10/16/16.
  */
@@ -10,7 +12,7 @@ public class CouchbaseClient {
 
     private CouchbaseClient(String connectionString, String bucketName) {
         CouchbaseCluster cluster = CouchbaseCluster.create(connectionString);
-        this.bucket =  cluster.openBucket(bucketName);
+        this.bucket =  cluster.openBucket(bucketName, 60, TimeUnit.SECONDS);
     }
 
     private static volatile CouchbaseClient connection;

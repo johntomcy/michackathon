@@ -1,10 +1,9 @@
 package com.michackathon.api.controllers.rest;
 
-import com.michackathon.api.dao.FlightDAO;
-import com.michackathon.api.domain.Flight;
-import com.michackathon.api.domain.TravelHistory;
-import com.michackathon.api.model.FlightSearch;
+import com.michackathon.dao.FlightDAO;
 import com.michackathon.couchbase.CouchbaseClient;
+import com.michackathon.entity.Flight;
+import com.michackathon.model.FlightSearch;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,7 +23,7 @@ public class FlightController {
 
     @RequestMapping(value = "/search",method = RequestMethod.POST,
         consumes = "application/json",produces = "application/json")
-    public List<Flight> flightSearch( @RequestBody FlightSearch search) throws IOException {
+    public List<Flight> flightSearch(@RequestBody FlightSearch search) throws IOException {
         List<Flight> flights= new ArrayList<Flight>();
         CouchbaseClient client = CouchbaseClient.getConnection("db-couch:8091", "default");
         if (client != null) {

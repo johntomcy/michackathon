@@ -1,7 +1,7 @@
 package com.michackathon.api.controllers.rest;
 
 
-import com.michackathon.api.domain.TravelHistory;
+import com.michackathon.entity.TravelHistory;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;

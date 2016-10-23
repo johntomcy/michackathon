@@ -1,12 +1,12 @@
 package com.michackathon.api.controllers.rest;
 
 import com.couchbase.client.deps.com.fasterxml.jackson.core.JsonProcessingException;
-import com.michackathon.api.dao.FlightDAO;
-import com.michackathon.api.dao.RecommendationDAO;
-import com.michackathon.api.domain.Flight;
-import com.michackathon.api.domain.Recommendation;
-import com.michackathon.api.model.FlightSearch;
+import com.michackathon.dao.FlightDAO;
+import com.michackathon.dao.RecommendationDAO;
 import com.michackathon.couchbase.CouchbaseClient;
+import com.michackathon.entity.Flight;
+import com.michackathon.entity.Recommendation;
+import com.michackathon.model.FlightSearch;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;

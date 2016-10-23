@@ -133,6 +133,30 @@ services:
        - auth-service
        - config-service
       entrypoint: ./wait-for-it.sh db-couch:8091 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  recommendation-api-service:
+        image: dockerhackathon/michackathon-travel-history-api
+        ports:
+         - 8103
+        depends_on:
+         - discovery-service
+         - db-couch
+        links:
+         - discovery-service
+         - auth-service
+         - config-service
+        entrypoint: ./wait-for-it.sh db-couch:8091 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
+  flight-api-service:
+        image: dockerhackathon/michackathon-travel-history-api
+        ports:
+         - 8104
+        depends_on:
+         - discovery-service
+         - db-couch
+        links:
+         - discovery-service
+         - auth-service
+         - config-service
+        entrypoint: ./wait-for-it.sh db-couch:8091 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   elasticsearch:
       image: elasticsearch:2.2
       restart: always

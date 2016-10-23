@@ -1,11 +1,11 @@
-package com.michackathon.api.dao;
+package com.michackathon.dao;
 
-import com.michackathon.api.domain.Flight;
 import com.michackathon.couchbase.CouchbaseClient;
 import com.michackathon.couchbase.CouchbaseEntityDAO;
+import com.michackathon.entity.Flight;
+
 
 import java.io.IOException;
-import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;

@@ -1,5 +1,7 @@
+
+
 import com.michackathon.api.controllers.rest.RecommendationController;
-import com.michackathon.api.model.FlightSearch;
+import com.michackathon.model.FlightSearch;
 import org.junit.Test;
 
 import java.io.IOException;

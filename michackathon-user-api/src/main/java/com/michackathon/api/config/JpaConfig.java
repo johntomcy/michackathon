@@ -1,6 +1,6 @@
 package com.michackathon.api.config;
 
-import com.michackathon.api.domain.travelHistory.User;
+import com.michackathon.api.domain.User;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.domain.AuditorAware;

@@ -1,13 +1,12 @@
 import com.michackathon.api.controllers.rest.FlightController;
-import com.michackathon.api.domain.Flight;
-import com.michackathon.api.model.FlightSearch;
+import com.michackathon.entity.Flight;
+import com.michackathon.model.FlightSearch;
 import org.junit.Assert;
 import org.junit.Test;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 
 /**

@@ -2,21 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-
-    <groupId>com.michackathon</groupId>
-    <artifactId>michackathon-travel-history-api</artifactId>
-    <version>${parent.version}</version>
-    <packaging>jar</packaging>
-
-    <name>michackathon-travel-history-api</name>
-    <description>michackathon-travel-history-api</description>
-
     <parent>
-        <groupId>com.michackathon</groupId>
         <artifactId>michackathon</artifactId>
+        <groupId>com.michackathon</groupId>
         <version>2.2.0</version>
     </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>michackathon-flight-api</artifactId>
 
 
     <dependencies>
@@ -25,19 +18,6 @@
             <artifactId>michackathon-entity</artifactId>
             <version>2.2.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.michackathon</groupId>
-            <artifactId>michackathon-recommendation-api</artifactId>
-            <version>2.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.michackathon</groupId>
-            <artifactId>michackathon-flight-api</artifactId>
-            <version>2.2.0</version>
-        </dependency>
-
-
-
 
         <dependency>
             <groupId>com.michackathon</groupId>
@@ -83,13 +63,13 @@
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
-             <scope>test</scope>
+            <scope>test</scope>
         </dependency>
-		<dependency>
-			<groupId>org.springframework.restdocs</groupId>
-			<artifactId>spring-restdocs-mockmvc</artifactId>
-			<scope>test</scope>
-		</dependency>
+        <dependency>
+            <groupId>org.springframework.restdocs</groupId>
+            <artifactId>spring-restdocs-mockmvc</artifactId>
+            <scope>test</scope>
+        </dependency>
 
         <dependency>
             <groupId>org.jolokia</groupId>
@@ -127,8 +107,6 @@
             <artifactId>guice</artifactId>
             <version>4.1.0</version>
         </dependency>
-
-
     </dependencies>
 
     <build>
@@ -142,10 +120,11 @@
                 <artifactId>docker-maven-plugin</artifactId>
             </plugin>
             <!--<plugin>-->
-                <!--<groupId>org.asciidoctor</groupId>-->
-                <!--<artifactId>asciidoctor-maven-plugin</artifactId>-->
+            <!--<groupId>org.asciidoctor</groupId>-->
+            <!--<artifactId>asciidoctor-maven-plugin</artifactId>-->
             <!--</plugin>-->
         </plugins>
     </build>
+
 
 </project>

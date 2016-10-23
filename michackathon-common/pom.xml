@@ -39,6 +39,15 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.michackathon</groupId>
+            <artifactId>michackathon-couchbase</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.michackathon</groupId>
+            <artifactId>michackathon-entity</artifactId>
+            <version>2.2.0</version>
+        </dependency>
     </dependencies>
 
 </project>

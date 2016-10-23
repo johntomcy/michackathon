@@ -7,8 +7,8 @@ export const APP_MENU: AppMenuItem[] = [
     link: ['']
   },
   {
-    name: 'Flight Search',
-    description: 'Flight Search page',
+    name: 'com.michackathon.entity.Flight Search',
+    description: 'com.michackathon.entity.Flight Search page',
     icon: 'casino',
     link: ['flightsearch'],
     roles: ['ROLE_ADMIN']

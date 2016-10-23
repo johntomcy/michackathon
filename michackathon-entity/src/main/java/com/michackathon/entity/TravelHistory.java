@@ -1,3 +1,5 @@
+package com.michackathon.entity;
+
 /**
  * Created by pankajmisra on 10/17/16.
  */
