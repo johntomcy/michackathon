@@ -24,7 +24,7 @@ import java.util.*;
 /**
  * Created by pankajmisra on 10/19/16.
  */
-public class DataLoader {
+public class DataLoaderTest {
 
     private static final int  MAX_CUSTOMERS = 100;
     private static final int  MAX_HISTORY = 20;
@@ -37,28 +37,10 @@ public class DataLoader {
 
 
 
-
-    public static void main(String[] args) throws IOException, ParseException {
-
-        System.out.println(new File("").getAbsolutePath());
-        iataAirports = mapper.readValue(new File("michackathon-travel-history-api/src/main/resources/airports-iata.json"),
-                                            mapper.getTypeFactory().constructCollectionType(List.class,
-                                                                                        Map.class));
-        mapper.setDateFormat(format);
-        //generate customer history with past flights
-        generateCustomer();
-
-        //generate future flights
-        for(int ctrFlts=0; ctrFlts < MAX_FLIGHTS; ctrFlts++) {
-            generateFlight(false);
-        }
-
-    }
-
     @Test
-    public void loadData() throws IOException, ParseException {
+    public void testLadData() throws IOException, ParseException {
         System.out.println(new File("").getAbsolutePath());
-        iataAirports = mapper.readValue(new File("michackathon-travel-history-api/src/main/resources/airports-iata.json"),
+        iataAirports = mapper.readValue(new File("/home/tjohn/michackathon/customer_recomm_platform/michackathon-travel-history-api/src/main/resources/airports-iata.json"),
             mapper.getTypeFactory().constructCollectionType(List.class,
                 Map.class));
         mapper.setDateFormat(format);
