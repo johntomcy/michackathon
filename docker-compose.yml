@@ -134,7 +134,7 @@ services:
        - config-service
       entrypoint: ./wait-for-it.sh db-couch:8091 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   recommendation-api-service:
-        image: dockerhackathon/michackathon-travel-history-api
+        image: dockerhackathon/michackathon-recommendation-api
         ports:
          - 8103
         depends_on:
@@ -146,7 +146,7 @@ services:
          - config-service
         entrypoint: ./wait-for-it.sh db-couch:8091 -- ./wait-for-service.sh http://discovery-service:8081/health -- java -Djava.security.egd=file:/dev/./urandom -jar /app.jar
   flight-api-service:
-        image: dockerhackathon/michackathon-travel-history-api
+        image: dockerhackathon/michackathon-flight-api
         ports:
          - 8104
         depends_on:
