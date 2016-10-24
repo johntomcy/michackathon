@@ -28,7 +28,7 @@ public class DataLoaderTest {
 
     private static final int  MAX_CUSTOMERS = 100;
     private static final int  MAX_HISTORY = 20;
-    private static final int MAX_FLIGHTS = 1000;
+    private static final int MAX_FLIGHTS = 5000;
 
     private static ObjectMapper mapper  = new ObjectMapper();
     private static SimpleDateFormat format = new SimpleDateFormat("YYYY-MM-dd");
