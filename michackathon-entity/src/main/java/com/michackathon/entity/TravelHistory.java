@@ -10,6 +10,7 @@ public class TravelHistory {
     private String flightId;
     private double price;
 
+
     public double getPrice() {
         return price;
     }
