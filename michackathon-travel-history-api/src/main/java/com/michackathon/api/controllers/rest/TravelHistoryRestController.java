@@ -17,8 +17,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/travel-history")
 public class TravelHistoryRestController {
-
-    @HystrixCommand(fallbackMethod = "defaultTravelHistory")
+    
     @RequestMapping(value = "/search",method = RequestMethod.POST,
         consumes = "application/json",produces = "application/json")
     public List<TravelHistory> travelHistorySearch(String custId) throws IOException {
