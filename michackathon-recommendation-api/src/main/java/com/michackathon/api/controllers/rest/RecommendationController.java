@@ -1,6 +1,7 @@
 package com.michackathon.api.controllers.rest;
 
 import com.couchbase.client.deps.com.fasterxml.jackson.core.JsonProcessingException;
+import com.michackathon.api.model.RecommendationRequest;
 import com.michackathon.dao.FlightDAO;
 import com.michackathon.dao.RecommendationDAO;
 import com.michackathon.couchbase.CouchbaseClient;
@@ -24,8 +25,10 @@ public class RecommendationController {
 
     @RequestMapping(value = "/search",method = RequestMethod.POST,
         consumes = "application/json",produces = "application/json")
-    public List<Recommendation> getRecommendations(@RequestParam String custId, @RequestBody FlightSearch search) throws IOException {
+    public List<Recommendation> getRecommendations(@RequestBody RecommendationRequest request) throws IOException {
         List<Recommendation> recommendations = new ArrayList<>();
+        String custId = request.getCustId();
+        FlightSearch search  = request.getFlightSearch();
         CouchbaseClient client = CouchbaseClient.getConnection("db-couch:8091", "default");
         if (client != null) {
             RecommendationDAO dao = new RecommendationDAO(client, Recommendation.class);
