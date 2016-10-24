@@ -20,6 +20,6 @@ public class RecommendationControllerTest {
         FlightSearch search = new FlightSearch();
         search.setOrigin("DXB");
         search.setDepDate(new SimpleDateFormat("yyyy-MM-dd").parse("2016-10-24"));
-        rec.getRecommendations("db0731f4-9244-4f96-9f6f-c6267fb6feaf", search);
+        //rec.getRecommendations("db0731f4-9244-4f96-9f6f-c6267fb6feaf", search);
     }
 }
