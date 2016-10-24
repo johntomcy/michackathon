@@ -2,6 +2,8 @@ package com.michackathon.couchbase;
 
 import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.CouchbaseCluster;
+import com.couchbase.client.java.env.CouchbaseEnvironment;
+import com.couchbase.client.java.env.DefaultCouchbaseEnvironment;
 
 import java.util.concurrent.TimeUnit;
 
@@ -11,8 +13,15 @@ import java.util.concurrent.TimeUnit;
 public class CouchbaseClient {
 
     private CouchbaseClient(String connectionString, String bucketName) {
-        CouchbaseCluster cluster = CouchbaseCluster.create(connectionString);
-        this.bucket =  cluster.openBucket(bucketName, 60, TimeUnit.SECONDS);
+        CouchbaseEnvironment env = DefaultCouchbaseEnvironment
+            .builder()
+            .connectTimeout(6000)
+            .kvTimeout(6000)
+            .computationPoolSize(5)
+            .socketConnectTimeout(6000)
+            .build();
+        CouchbaseCluster cluster = CouchbaseCluster.create(env, connectionString);
+        this.bucket =  cluster.openBucket(bucketName);
     }
 
     private static volatile CouchbaseClient connection;

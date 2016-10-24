@@ -4,10 +4,7 @@ import com.michackathon.dao.FlightDAO;
 import com.michackathon.couchbase.CouchbaseClient;
 import com.michackathon.entity.Flight;
 import com.michackathon.model.FlightSearch;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -16,7 +13,7 @@ import java.util.List;
 /**
  * Created by pankajmisra on 10/22/16.
  */
-
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/flight")
 public class FlightController {

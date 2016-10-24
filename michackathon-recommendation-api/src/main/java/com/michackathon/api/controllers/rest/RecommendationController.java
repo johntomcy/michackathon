@@ -17,6 +17,7 @@ import java.util.UUID;
 /**
  * Created by pankajmisra on 10/22/16.
  */
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/recommendation")
 public class RecommendationController {
