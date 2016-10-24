@@ -80,6 +80,8 @@ public class DataLoaderTest {
         } else {
             flt.setDepDate(new Date(randomData.nextLong(currentDate.plusDays(1).getMillis(), currentDate.plusDays(90).getMillis())));
         }
+        DateTime depDateTime = new DateTime(flt.getDepDate());
+        flt.setArrivalDate(new Date(randomData.nextLong(depDateTime.plusHours(2).getMillis(), depDateTime.plusHours(8).getMillis())));
         flt.setFlightNumber("" + randomData.nextInt(1, 500));
 
         //DXB as origin - 0, DXB as dest - 1
