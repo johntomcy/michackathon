@@ -47,6 +47,14 @@ There is a UI using Angular 2, which can be accesses using below URL (again its 
 * Lazy loaded routes
 * Spring Boot admin support
 * Spring REST Docs support
+* Polyglot Programming (Node microservice)
+* Spring sidecar project (for bringing non-java microservice into the ecosystem)
+* Polyglot persistence (PostgreSQL & Couchbase)
+* Docker based reveal.js presentation
+* Multiple microservices based on Spring Boot (Travel history, recommendation, rating and flight)
+* Logging & Monitoring by integrating ELK (Elasticsearch, Logstash and Kibana along with Curator) stack
+* Integration with Hystrix for Monitoring
+* Integration with Turbine again for monitoring multiple streams
 
 ## MICROSERVICES:
 
