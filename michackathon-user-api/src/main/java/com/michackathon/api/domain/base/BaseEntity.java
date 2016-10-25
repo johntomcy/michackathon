@@ -8,7 +8,7 @@ import java.util.Objects;
 import java.util.UUID;
 
 /**
- * Created by Tomasz Kucharzyk
+ * Created by Tomcy John
  */
 
 @MappedSuperclass

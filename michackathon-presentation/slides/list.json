@@ -1,9 +1,5 @@
 [
-    "ohmy.html",
-    "thankyou.html",
     "header.html",
-    "fatigue.html",
-    "jokesapart.html",
     "backtohack.html",
     "sb.html",
     "storyboard.html",
@@ -17,7 +13,6 @@
     "cicd.md",
     "logging.md",
     "demo1.html",
-    "bitbucketsource.html",
     "googlecloud.html",
     "adminserver.html",
     "configgit.html",

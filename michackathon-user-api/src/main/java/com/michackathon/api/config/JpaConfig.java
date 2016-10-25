@@ -7,7 +7,7 @@ import org.springframework.data.domain.AuditorAware;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 /**
- * Created by Tomasz Kucharzyk
+ * Created by Tomcy John
  */
 @Configuration
 @EnableJpaAuditing(auditorAwareRef = "auditorProvider")
