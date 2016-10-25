@@ -2,7 +2,23 @@
 
 ## PROJECT DESCRIPTION:
 
-This project integrateS Spring Boot application containing different Spring cloud components (Netflix OSS) with Angular 2.
+The project was initiatied for a Hackathon on Microservices.
+
+It started as a private repository in bitbucket by mere copy of code from below location:
+
+### [https://github.com/shardis/spring-angular2-starter] (https://github.com/shardis/spring-angular2-starter)
+
+We thank the author for sharing this as a open source project which helped us fast track on our jouney in Hackathon which span only 7 days of coding (obviously 2-3 hours a day) after office hours.
+
+We then added good amount of other features which is detailed below in features section.
+
+We wanted to start off as a fork to give full credit to the author but because of multiple reasons was not able to do so. But we want to give the author credit for this, thats the reason for this attribution.
+
+We havent got time to refactor and actually do a fork now but didnt want to keep the code hidden from the communoty which has given us a lot.
+
+Thanks to all who contribute to open source.
+
+This project integrates Spring Boot application containing different Spring cloud components (Netflix OSS) with Angular 2.
 Node and npm are installed as part of maven build. Also webpack build and karma tests runs with maven.
 It also uses Spring Cloud microservices and Spring Security with Oauth2 JWT tokens.
 It also uses docker extensively and each project (each folder) is run as a docker container.
