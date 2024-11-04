@@ -1,0 +1,23 @@
+name: Run Fast Scan
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+jobs:
+  run-fastscan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Pull docker image
+        run: docker pull castimaging/fast-scan-java-cli
+
+      - name: Run Fast Scan
+        run: |
+         cd ${{ github.workspace }}
+          git_folder=$(basename "$(git rev-parse --show-toplevel)") 
+          # The git folder name is mapped to the project name
+          docker run -v $(pwd):/fastScan/sourceCode castimaging/fast-scan-java-cli /fastScan/sourceCode -s https://profiler.castsoftware.io --repoId ${{github.repository_id}} --runId ${{github.run_id}} --runAttempt ${{ github.run_attempt }} -n $git_folder -g "$GITHUB_CONTEXT"
